@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import toast from "react-hot-toast";
+import { Plus } from "lucide-react";
 
 const pasteeditor = () => {
   const { id } = useParams();
@@ -54,18 +55,18 @@ const pasteeditor = () => {
   };
 
   return (
-    <div className="w-200 h-[80vh] p-8 py-4">
+    <div className="w-full max-w-200 h-[80vh] p-8 py-4">
       <form
         className="flex flex-col text-white placeholder:text-white"
         action=""
         onSubmit={submitHandler}
       >
-        <div className="flex mb-4  justify-between ">
+        <div className="flex mb-4  justify-between gap-1">
           <input
             className="border border-neutral-700
     focus:border-white
     focus:shadow-[0_0_0_1px_rgba(59,130,246,0.6),0_20px_40px_rgba(0,0,0,0.8)]
-    transition-all duration-300 bg-black rounded-xl py-3 px-5 text-2xl w-150 outline-none"
+    transition-all duration-300 bg-black rounded-xl py-3 px-5 text-2xl w-[80%]  outline-none"
             onChange={(e) => {
               setTitle(e.target.value);
             }}
@@ -75,12 +76,15 @@ const pasteeditor = () => {
           />
           <button
             onClick={createPaste}
-            className="bg-black  rounded-xl py-1 px-3 text-lg w-30 border border-neutral-700
+            className="bg-black  rounded-xl py-1 px-3 text-lg w-[20%]  border border-neutral-700
     hover:border-white
     hover:shadow-[0_0_0_1px_rgba(59,130,246,0.6),0_20px_40px_rgba(0,0,0,0.8)] active:scale-95
     transition-all duration-300"
           >
-            {id ? "Update" : "Create"}
+            <Plus size={18} className="sm:hidden inline"/>
+    <span className="hidden sm:inline">
+      {id ? "Update" : "Create"}
+    </span>
           </button>
         </div>
         <textarea

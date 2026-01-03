@@ -33,22 +33,25 @@ const pastelist = () => {
   };
 
   return (
-    <div className="w-200 h-[80vh] p-8 py-4 text-white ">
+    <div className="w-full max-w-200 h-[80vh] p-8 py-4 text-white ">
       <input
         value={search}
         onChange={(e) => {
           setSearch(e.target.value);
         }}
-        className="mb-3 bg-black rounded-xl py-3 px-5 text-2xl w-full outline-none"
+        className="border border-neutral-700
+    focus:border-white
+    focus:shadow-[0_0_0_1px_rgba(59,130,246,0.6),0_20px_40px_rgba(0,0,0,0.8)]
+    transition-all duration-300 mb-3 bg-black rounded-xl py-3 px-5 text-2xl w-full outline-none"
         type="text"
         placeholder="Search.."
       />
       <div className="no-scroll">
         {filteredPastes.map((paste) => (
-          <div key={paste.id} className="bg-black p-4 rounded-xl mt-1 w-full">
+          <div key={paste.id} className="border border-neutral-700 bg-black p-4 rounded-xl mt-1 w-full">
             <div className="flex justify-between items-center">
               <h2 className="text-xl font-semibold">{paste.title}</h2>
-              <div className="flex justify-between items-center w-40 ">
+              <div className="flex justify-between items-center w-[50%] max-w-40 ">
                 <button className=" rounded hover:bg-gray-700 p-1 ">
                   <Link to={`/${paste.id}`}>
                     {" "}

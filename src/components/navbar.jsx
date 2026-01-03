@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="flex gap-3 justify-start items-center w-184 px-5 py-3 mt-4 bg-black rounded-xl border border-neutral-700 ">
+    <div className="px-8 w-full max-w-200">
+      <div className="flex gap-3 justify-start items-center  px-5 py-3 mt-4 bg-black rounded-xl border border-neutral-700 ">
       <NavLink
         to="/"
         end
@@ -27,6 +28,8 @@ const Navbar = () => {
         Pastes
       </NavLink>
     </div>
+    </div>
+    
   );
 };
 

@@ -18,13 +18,13 @@ const pasteview = () => {
 
   if (!found) return <p className="text-white p-8">Paste not found</p>;
   return (
-    <div className="w-200 h-[80vh] p-8 no-scroll py-4">
+    <div className="w-full max-w-200 h-[80vh] p-8 no-scroll py-4">
       <div className="flex flex-col text-white placeholder:text-white">
-        <div className="bg-black rounded-xl py-3 px-5 text-2xl w-full outline-none mb-4">
+        <div className="border border-neutral-700 bg-black rounded-xl py-3 px-5 text-2xl w-full outline-none mb-4">
           {found.title}
         </div>
 
-        <div className="relative bg-black rounded-xl py-3 px-5 text-sm h-126 outline-none">
+        <div className="border border-neutral-700 relative bg-black rounded-xl py-3 px-5 text-sm h-126 outline-none">
           <button
             onClick={copyText}
             className="absolute right-3 top-3 hover:bg-gray-700 p-1 rounded"
